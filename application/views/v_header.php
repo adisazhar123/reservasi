@@ -9,15 +9,10 @@
     <meta name="author" content="">
 
     <title>Reserve PC</title>
-
-    <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>css/modern-business.css" rel="stylesheet">
   </head>
 
-        <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
           <a class="navbar-brand" href="<?php echo base_url();?>Home/index">RPL Reservation</a>
@@ -27,10 +22,10 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link" href="<?php echo base_url();?>Services">Services</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="login.html" style="color:white">Login</a>
+                  <a class="nav-link" href="login.html" style="color:greenyellow">Login</a>
                 </li>
             </ul>
           </div>

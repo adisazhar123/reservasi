@@ -35,8 +35,6 @@
     <div class="container">
 
       <h1 class="my-4" style="text-align: center">Welcome to RPL PC Reservation</h1>
-
-      <!-- Marketing Icons Section -->
       <div class="row" style="justify-content: center">
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
@@ -45,7 +43,7 @@
               <p class="card-text">If you would liked to book a PC in RPL Lab, click below.</p>
             </div>
             <div class="card-footer">
-              <a href="services.html" class="btn btn-primary">Take me there</a>
+              <a href="<?php echo base_url();?>Services" class="btn btn-primary">Take me there</a>
             </div>
           </div>
         </div>
