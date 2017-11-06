@@ -18,6 +18,13 @@ class Services extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	var $token;
+	
+	public function __construct(){
+		parent::__construct();
+		$this->load->library('session');
+	}
 	public function index()
 	{   $this->load->model('ServicesModel');
 		$data['comps']=$this->ServicesModel->getData();
@@ -38,15 +45,21 @@ class Services extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email', 'required');
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('v_header');
-			$this->load->view('user/v_services', $data);
-			$this->load->view('v_footer');
+			$this->index();
 		}else{
+			$this->session->set_flashdata('update_token', time());
 			$this->ServicesModel->setReservation();
-			$this->load->view('v_header');
-			$this->load->view('v_succes');
-			$this->load->view('v_footer');
+			redirect('/services/success');
 		}
 	}
+
+	public function success() {
+		if( ! $this->session->flashdata('update_token')){
+			redirect('services/index');
+		}			
+			$this->load->view('v_header');
+			$this->load->view('v_succes');			
+			$this->load->view('v_footer');
+		}
 }
 ?>
