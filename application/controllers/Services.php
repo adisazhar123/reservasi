@@ -25,5 +25,28 @@ class Services extends CI_Controller {
         $this->load->view('user/v_services', $data);
         $this->load->view('v_footer');
 	}
+	public function create (){
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->model('ServicesModel');
+		$data['title']='Create reservation';
+		
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('id', 'pc_id', 'required');
+		$this->form_validation->set_rules('nrp', 'Nrp', 'required');
+		$this->form_validation->set_rules('no_hp', 'No_hp', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+
+		if ($this->form_validation->run() == FALSE){
+			$this->load->view('v_header');
+			$this->load->view('user/v_services', $data);
+			$this->load->view('v_footer');
+		}else{
+			$this->ServicesModel->setReservation();
+			
+		}
+
+
+	}
 }
 ?>
