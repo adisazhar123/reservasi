@@ -30,23 +30,25 @@
         show()
       </script>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Services
+      <h1>Services
         <small>- Reserve a PC</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="<?php echo base_url();?>Home">Home</a>
         </li>
         <li class="breadcrumb-item active">Services</li>
       </ol>
 
-        /* connect to database to show available pc */
+        <!--connect to database to show available pc -->
 
       <div class="row" style="justify-content: center">
-        <form action="#" method="post"> 
+
+       <?php echo form_open('Services/create');?>
+        PC No: <br>
         <select name="id">
-          PC No: <br>
+         
           <?php
             $link = mysqli_connect("localhost", "root", "", "db_test");
             $sql = mysqli_query($link, "SELECT * from computer");
@@ -69,13 +71,20 @@
           <input type="text" name="email">
           <p>*By submitting you have <br>read and understood the procedures and rules.
           Click<a href="index.html"> here</a> to read.</p>  
-          <input type="submit" value="Submit">
+          <input type="submit" name="submit" value="Create reservation">
         </form>
+
         <div class="col-lg-5 mb-5">
           <div class="card h-100">
             <h6 class="card-header">Specs</h6>
             <div class="card-body">
-              <p class="card-text">Processor:<br>RAM:<br></p>
+              <div class="card-text"
+              
+                <p>Processor:<br>RAM:<br>
+                Harddisk:<br>Graphics Card:<br>
+                Monitor:<br>
+                </p>
+              </div>
             </div>
           </div>
           </div>      
