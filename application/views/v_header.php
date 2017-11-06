@@ -11,11 +11,14 @@
     <title>Reserve PC</title>
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/modern-business.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  
   </head>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="<?php echo base_url();?>Home/index">RPL Reservation</a>
+          <a class="navbar-brand" href="<?php echo base_url();?>Home/index"><i class="fa fa-laptop" style="font-size: 30px; color: white" aria-hidden="true"></i>
+RPL Reservation</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,4 +34,3 @@
           </div>
         </div>
     </nav>
-
