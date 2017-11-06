@@ -43,10 +43,10 @@ class Services extends CI_Controller {
 			$this->load->view('v_footer');
 		}else{
 			$this->ServicesModel->setReservation();
-			
+			$this->load->view('v_header');
+			$this->load->view('v_succes');
+			$this->load->view('v_footer');
 		}
-
-
 	}
 }
 ?>
