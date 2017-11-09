@@ -10,3 +10,5 @@
     <script src="<?php echo base_url();?>js/jquery.min.js"></script>
     <script src="<?php echo base_url();?>js/bootstrap.bundle.min.js"></script>
     <script language="javascript" src="<?php echo base_url();?>js/clock.js"></script>
+
+    <script  src="<?php echo base_url();?>js/index_login.js"></script>
