@@ -11,7 +11,9 @@ class ServicesModel extends CI_Model
         $this->load->helper('url');
         $data = array(
             'NAMA'=> $this->input->post('name'),
-            'EMAIL'=> $this->input->post('email')
+            'EMAIL'=> $this->input->post('email'),
+            'NO_HP'=>$this->input->post('no_hp'),
+            'TIME_'=>$this->input->post('Clock')
         );
         
         return $this->db->insert('reservation', $data);

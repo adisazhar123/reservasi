@@ -1,10 +1,8 @@
 <body>
-
-    <!-- Page Content -->
     <div class="container">
       <br>
       <form name="Tick" style="text-align: right">
-      <input align="left" style="text-align: center" type="text" size="10" name="Clock">
+      <input align="left" style="text-align: center" type="text" size="10" name="Clock" readonly>
       </form>
       <script>
         function show(){
@@ -29,7 +27,7 @@
         }
         show()
       </script>
-      <!-- Page Heading/Breadcrumbs -->
+
       <h1>Services
         <small>- Reserve a PC</small>
       </h1>
@@ -40,12 +38,12 @@
         </li>
         <li class="breadcrumb-item active">Services</li>
       </ol>
-
-        <!--connect to database to show available pc -->
+      
+      <!--connect to database to show available pc -->
 
       <div class="row" style="justify-content: center">
 
-       <?php echo form_open('Services/create');?>
+       <?php echo form_open('Services/create'); echo validation_errors();?>
         PC No: <br>
         <select name="id">
          
