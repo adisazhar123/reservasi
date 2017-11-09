@@ -7,7 +7,6 @@
         </ol>
     </header>
 
-    <!-- Page Content -->
     <div class="container">
     <br>
     <ol class="breadcrumb">

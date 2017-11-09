@@ -19,4 +19,6 @@ class ServicesModel extends CI_Model
         return $this->db->insert('reservation', $data);
     
     }
+
+    
 }

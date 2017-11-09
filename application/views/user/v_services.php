@@ -34,7 +34,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url();?>Home">Home</a>
+          <a href="<?php echo base_url();?>Welcome">Home</a>
         </li>
         <li class="breadcrumb-item active">Services</li>
       </ol>
@@ -43,7 +43,7 @@
 
       <div class="row" style="justify-content: center">
 
-       <?php echo form_open('Services/create'); echo validation_errors();?>
+       <?php echo form_open('Services/create');?>
         PC No: <br>
         <select name="id">
          
@@ -70,6 +70,7 @@
           <p>*By submitting you have <br>read and understood the procedures and rules.
           Click<a href="index.html"> here</a> to read.</p>  
           <input type="submit" name="submit" value="Create reservation">
+          <?php echo validation_errors();?>
         </form>
 
         <div class="col-lg-5 mb-5">

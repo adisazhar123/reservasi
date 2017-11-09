@@ -10,10 +10,13 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-form">
+
+
+    <form class="login-form" method="post" action="<?php echo site_url('verifylogin');?>">
+    <?php echo validation_errors();?>
       <input name ="username" type="text" placeholder="username"/>
       <input name = "password" type="password" placeholder="password"/>
-      <button>login</button>
+      <button type="submit"login value="Login">Login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>

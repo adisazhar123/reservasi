@@ -1,18 +1,24 @@
 <?php
-
-class LoginModel extends CI_Model
+Class LoginModel extends CI_Model
 {
-    public function getData()
-    {
-        $query=$this->db->get('user_');
-        return $query->result();
-    }
-    public function setUser(){
-        $data = array(
-            'USERNAME'=> $this->input->post('username'),
-            'PWD'=>$this->input->post('password')
-        );
-        
-        return $this->db->insert('user_', $data);
-    }
+ function login($username, $password)
+ {
+   $this -> db -> select('username, password, id');
+   $this -> db -> from('user_');
+   $this -> db -> where('username', $username);
+   $this -> db -> where('password', $password);
+   $this -> db -> limit(1);
+ 
+   $query = $this -> db -> get();
+ 
+   if($query -> num_rows() == 1)
+   {
+     return $query->result();
+   }
+   else
+   {
+     return false;
+   }
+ }
 }
+?>
