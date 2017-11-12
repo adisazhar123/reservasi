@@ -91,5 +91,6 @@
         </div>
          <p>Reservation pending. Thank you for filling in the request. You will be emailed regarding the
         status of your confirmation. Please ask any of the admins for help.</p> 
+        <?php echo $msg; ?>
   </body>
 </html>

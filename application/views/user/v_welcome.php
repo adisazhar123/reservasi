@@ -8,14 +8,13 @@
     </header>
 
     <div class="container">
-    <br>
-    <ol class="breadcrumb">
+      <h1 class="my-4" style="text-align: center">Welcome to RPL PC Reservation</h1>    
+      <ol class="breadcrumb">
         <li class="breadcrumb-item active">
           <a>Home</a>
         </li>
       </ol>
 
-      <h1 class="my-4" style="text-align: center">Welcome to RPL PC Reservation</h1>
       <div class="row" style="justify-content: center">
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
@@ -40,7 +39,7 @@
               </ol>
               <hr>
               <ul>
-                <li>The current user of the pc (the borrower) will be responsible of the wellbeing of the PC.
+                <li>The current user of the pc (the borrower) will be responsible for the wellbeing of the PC.
                   Any damage done will be in the expense of the user.
                 </li>
               </ul>

@@ -13,13 +13,15 @@ class VerifyLogin extends CI_Controller {
    $this->load->library('form_validation');
  
    $this->form_validation->set_rules('username', 'Username', 'required');
-   $this->form_validation->set_rules('password', 'Password', 'required|callback_check_database');
+   $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
  
    if($this->form_validation->run() == FALSE)
    {
      //Field validation failed.  User redirected to login page
+     $data['msg']=NULL;
+     
      $this->load->view('v_header');
-     $this->load->view('user/v_login');
+     $this->load->view('user/v_login',$data);
      $this->load->view('v_footer'); 
    }
    else
@@ -44,13 +46,10 @@ class VerifyLogin extends CI_Controller {
      foreach($result as $row)
      {
        $sess_array = array(
-         'id' => $row->id,
+         'nrp' => $row->nrp,
          'username' => $row->username
        );
        $this->session->set_userdata('logged_in',$sess_array);
-
-       if (isset($_SESSION['logged_in'])) echo "yes";
-
      }
      return true;
    }
