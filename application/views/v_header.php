@@ -13,7 +13,7 @@
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-
+    <script src="<?php echo base_url();?>js/jquery.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url();?>css/style_login.css">
     
   </head>

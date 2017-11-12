@@ -4,30 +4,7 @@
       <form name="Tick" style="text-align: right">
       <input align="left" style="text-align: center" type="text" size="10" name="Clock" readonly>
       </form>
-      <script>
-        function show(){
-        var Digital=new Date()
-        var hours=Digital.getHours()
-        var minutes=Digital.getMinutes()
-        var seconds=Digital.getSeconds()
-        var dn="AM"
-        if (hours>12){
-        dn="PM"
-        hours=hours-12
-        }
-        if (hours==0)
-        hours=12
-        if (minutes<=9)
-        minutes="0"+minutes
-        if (seconds<=9)
-        seconds="0"+seconds
-        document.Tick.Clock.value=hours+":"+minutes+":"
-        +seconds+" "+dn
-        setTimeout("show()",1000)
-        }
-        show()
-      </script>
-
+      
       <h1>Services
         <small>- Reserve a PC</small>
       </h1>
@@ -45,16 +22,11 @@
 
        <?php echo form_open('Services/create');?>
         PC No: <br>
-        <select name="id">
-         
-          <?php
-            $link = mysqli_connect("localhost", "root", "", "db_test");
-            $sql = mysqli_query($link, "SELECT * from computer");
-              while ($row = $sql->fetch_assoc()){
-                  if ($row['status']=== "1")
-                      echo '<option value="'.$row['ID'].'">' . $row['ID'] . "</option>";        
-              }
-          ?>
+        <select name="CompId" id="CompId">
+          <?php foreach($computers as $comp){
+            if ($comp->status == 1)
+              echo '<option value="'.$comp->CompId.'">' . $comp->CompId . "</option>";
+            } ?>
           </select> <br>
           Name:<br>
           <input type="text" name="name">
@@ -73,21 +45,45 @@
           <?php echo validation_errors();?>
         </form>
 
-        <div class="col-lg-5 mb-5">
+        <div class="col-lg-6 mb-5">
           <div class="card h-100">
-            <h6 class="card-header">Specs</h6>
+            <h5 class="card-header">Specs</h5>
             <div class="card-body">
-              <div class="card-text"
-              
-                <p>Processor:<br>RAM:<br>
-                Harddisk:<br>Graphics Card:<br>
-                Monitor:<br>
-                </p>
+              <div class="card-text" id="specsParagraph">
+               
               </div>
             </div>
           </div>
           </div>      
-        </div>
+        </div>        
+        
         <?php echo $msg;?>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('#CompId').on('change', function(){
+              var CompId = $(this).val();
+
+                $.ajax({
+                  url:"<?php echo base_url() ?>Services/GetSpecs",
+                  type: "POST",
+                  data: {'CompId' : CompId},
+                  dataType: 'json',
+                  success: function(data){
+                    $('#specsParagraph').html(data);
+                  },
+                  error: function(){
+                    alert('Error...');
+                  }
+                });
+            });
+          });
+
+      </script>
+
+        
+
+
+
   </body>
 </html>

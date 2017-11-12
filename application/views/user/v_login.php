@@ -8,7 +8,7 @@
       <input name ="nrp" type="text" placeholder="nrp"/>
       <input name="username" type="text" placeholder="name"/>
       <input name="password" type="password" placeholder="password"/>
-   
+
       <button type="submit">create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>

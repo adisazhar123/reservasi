@@ -1,7 +1,7 @@
 <?php
 class ServicesModel extends CI_Model
 {
-    public function getData()
+    public function getComps()
     {
         $query=$this->db->get('computer');
         return $query->result();
@@ -23,5 +23,9 @@ class ServicesModel extends CI_Model
         $this->db->insert($table,$data);
     }
 
+    public function GetSpecsQuery($CompId){
+        $query = $this->db->get_where('computer',array('CompId'=> $CompId));
+        return $query->result();
+    }
     
 }

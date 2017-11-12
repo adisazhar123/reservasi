@@ -7,16 +7,15 @@ class Services extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->model('ServicesModel');
 	}
 	public function index()
 	{   
-		
 		$data['msg']=NULL;		
-		$this->load->model('ServicesModel');
-		$data['comps']=$this->ServicesModel->getData();
+		$data['computers']=$this->ServicesModel->GetComps();
         $this->load->view('v_header');
-        $this->load->view('user/v_services',$data);
-        $this->load->view('v_footer');
+		$this->load->view('user/v_services',$data);
+		$this->load->view('v_footer');
 	}
 	public function create (){
 		$this->load->model('ServicesModel');
@@ -45,5 +44,28 @@ class Services extends CI_Controller {
 			$this->load->view('user/v_services',$data);			
 			$this->load->view('v_footer');
 		}
-}
+
+	public function GetSpecs(){
+		$CompId=$this->input->post('CompId');
+		$specs = $this->ServicesModel->GetSpecsQuery($CompId);
+
+		if (count($specs)>0){
+			$paragraph='';
+			$processor = 'Processor: ';
+			$ram = 'Ram: ';
+			$harddisk = 'Harddisk: ';
+			$graphicscard = 'Graphics Card: ';
+			$monitor = 'Monitor: ';
+			
+			foreach($specs as $spec){
+				$paragraph .= '<p>'.$processor. " " .$spec->PROCESSOR. " ".'<br>'. " ".$ram. " ".$spec->RAM. 
+				" " .'<br>' . " ".$harddisk . " ".$spec->HARDDISK . " " .'<br>' . " " .$graphicscard. " "
+				.$spec->GRAPHICS_CARD . " " .'<br>'. " " .$monitor. " " .$spec->MONITOR. '</p>';
+				
+			}
+			echo json_encode($paragraph);
+		}
+	}	
+
+	}
 ?>
