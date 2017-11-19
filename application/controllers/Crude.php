@@ -12,7 +12,7 @@ class Crude extends CI_Controller{
 
 	function index()
 	{
-		$data['user'] = $this->m_data->tampil_data()->result();
+		$data['user'] = $this->tambah_aksi();
 		$this->load->view('v_tampil',$data);
 	}
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/Color.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/Admin.css" rel="stylesheet">
+
+  </head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="#hero"><img src="img/selogo.png"  alt="" title="" /></img></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#">Log out</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome Admin!</h1>
+      <a href="#services" class="btn-get-started">Go!</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Sistem Reservasi RPL</h3>
+        </div>
+        <br>
+      </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <h4 class="title"><a href="">Data User</a></h4>
+          <div class="dropdown.divider">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">List PC
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" style="padding-left: 14px">
+                  <li><a href="#">PC 1</a></li>
+                  <li><a href="#">PC 2</a></li>
+                  <li><a href="#">PC 3</a></li>
+              </ul>
+          </div>               
+          <br>
+              <div class="form-group">
+                <label for="Nama">Name</label>
+                <input class="form-control" type="text" name="Nama">
+                <label for="NRP">NRP</label>
+                <input class="form-control" type="number" name="NRP">
+                <label for="HP">HP</label>
+                <input class="form-control" type="number" name="No.HP">
+                <label for="email">Email</label>
+                <input class="form-control" type="email" name="Email">
+                <br>
+                <input type="submit" name="edit" class="btn btn-danger" value="Edit" style="margin-right: 10px">
+                <input type="submit" name="done" class="btn btn-default disabled" value="Done">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Specs</a></h4>
+              <textarea class="form-control" rows="14"></textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <h4 class="title"><a href="">keterangan</a></h4>
+              <textarea class="form-control" rows="14"></textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+              <div class="box" style="width: 1870px">
+              <h4 class="title"><a href="">Table</a></h4>
+              <div class="form-group">
+              </div>
+              <div>
+              <input type="text" id="myInput" onkeyup="myFunction()", placeholder="Search" title="Search">
+              <table class="table table-fixed">
+                <thead>
+                  <tr>
+                    <th>No Pc</th>
+                    <th>NRP</th>
+                    <th>Nama</th>
+                    <th>No. HP</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>PC01</td>
+                    <td>5116100168</td>
+                    <td>Maile</td>
+                    <td>0817777544</td>
+                    <td>google@maile.com</td>
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+
+            
+          </div>
+
+
+      
+
+
+
+    </section><!-- #services -->
+
+  
+  
+  
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
