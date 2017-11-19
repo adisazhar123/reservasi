@@ -1,34 +1,17 @@
   <body>
     <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        </ol>
     </header>
-
     <div class="container">
       <h1 class="my-4" style="text-align: center">Welcome to RPL PC Reservation</h1>    
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active">
-          <a>Home</a>
-        </li>
-      </ol>
 
       <div class="row" style="justify-content: center">
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Book Now!</h4>
-            <div class="card-body">
-              <p class="card-text">If you would liked to book a PC in RPL Lab, click below.</p>
-            </div>
-            <div class="card-footer">
-              <a href="<?php echo base_url();?>Services" class="btn btn-primary">Take me there</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
+        <div class="">      
+        <ol class="breadcrumb col-md-12">
+          <li class="breadcrumb-item active">
+            <a>Home</a>
+          </li>
+        </ol>
+          <div class="card h-90">
             <h4 class="card-header">Procedures and Rules</h4>
             <div class="card-body">
               <ol>
@@ -45,11 +28,11 @@
               </ul>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <a href="<?php echo base_url();?>Services" class="btn btn-primary">Take me there</a>
             </div>
           </div>
         </div>
       </div>
+      <br>
   </body>
-
 </html>

@@ -9,8 +9,7 @@ class Services extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('ServicesModel');
 	}
-	public function index()
-	{   
+	public function index(){   
 		$data['msg']=NULL;		
 		$data['computers']=$this->ServicesModel->GetComps();
         $this->load->view('v_header');
@@ -21,7 +20,6 @@ class Services extends CI_Controller {
 		$this->load->model('ServicesModel');
 		
 		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('id', 'PC No', 'required');
 		$this->form_validation->set_rules('nrp', 'NRP', 'required');
 		$this->form_validation->set_rules('no_hp', 'NO. HP', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required');
@@ -31,18 +29,16 @@ class Services extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('update_token', time());
 			$this->ServicesModel->setReservation();
+			$this->session->set_flashdata('success', 'form submitted');
 			redirect('services/success');
 		}
 	}
 
-	public function success() {
+	public function success(){
 		if( ! $this->session->flashdata('update_token')){
 			redirect('services/index');
 		}
-			$data['msg']='Reservation submitted';
-			$this->load->view('v_header');
-			$this->load->view('user/v_services',$data);			
-			$this->load->view('v_footer');
+		$this->index();
 		}
 
 	public function GetSpecs(){

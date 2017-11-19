@@ -14,8 +14,7 @@ class AdminHome extends CI_Controller {
      $data['username'] = $session_data['username'];
      $this->load->view('admin/v_adminhome', $data);
    }
-   else
-   {
+   else{
      //If no session, redirect to login page
      redirect('login', 'refresh');
    }

@@ -1,10 +1,6 @@
 <body>
     <div class="container">
       <br>
-      <form name="Tick" style="text-align: right">
-      <input align="left" style="text-align: center" type="text" size="10" name="Clock" readonly>
-      </form>
-      
       <h1>Services
         <small>- Reserve a PC</small>
       </h1>
@@ -19,10 +15,11 @@
       <!--connect to database to show available pc -->
 
       <div class="row" style="justify-content: center">
-
-       <?php echo form_open('Services/create');?>
+        <div class="col-md-4">
+       <?php echo form_open('Services/create', array('id'=>'reservation'));?>
         PC No: <br>
         <select name="CompId" id="CompId">
+          <option style="display:none">
           <?php foreach($computers as $comp){
             if ($comp->status == 1)
               echo '<option value="'.$comp->CompId.'">' . $comp->CompId . "</option>";
@@ -39,14 +36,23 @@
           <br>
           Email:<br>
           <input type="text" name="email">
-          <p>*By submitting you have <br>read and understood the procedures and rules.
-          Click<a href="index.html"> here</a> to read.</p>  
+          <br>
+          Comments:<br>  
+          <textarea formid="reservation" rows="2" cols="25">
+Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> 
           <input type="submit" name="submit" value="Create reservation">
           <?php echo validation_errors();?>
         </form>
+        </div>
+      
+          <div class="col-md-4">
+          <br><br>
+          <textarea formid="reservation" rows="2" cols="25">
+Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> 
+          </div>
 
-        <div class="col-lg-6 mb-5">
-          <div class="card h-100">
+        <div class="col-md-4 ">
+          <div class="card h-70">
             <h5 class="card-header">Specs</h5>
             <div class="card-body">
               <div class="card-text" id="specsParagraph">
@@ -54,10 +60,11 @@
               </div>
             </div>
           </div>
-          </div>      
+          </div>
         </div>        
         
         <?php echo $msg;?>
+        <?php echo $this->session->flashdata('success'); ?>
 
         <script type="text/javascript">
           $(document).ready(function(){
@@ -80,10 +87,5 @@
           });
 
       </script>
-
-        
-
-
-
   </body>
 </html>
