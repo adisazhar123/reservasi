@@ -6,9 +6,11 @@ class ServicesModel extends CI_Model
         $query=$this->db->get('computer');
         return $query->result();
     }
+    
     public function setReservation(){
         $this->load->helper('url');
         $data = array(
+            'CompId' => $this->input->post('CompId'),
             'NAMA'=> $this->input->post('name'),
             'EMAIL'=> $this->input->post('email'),
             'NO_HP'=>$this->input->post('no_hp'),
