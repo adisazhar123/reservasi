@@ -15,7 +15,7 @@
       <!--connect to database to show available pc -->
 
       <div class="row" style="justify-content: center">
-        <div class="col-md-4">
+        <div class="col-md-5">
        <?php echo form_open('Services/create', array('id'=>'reservation'));?>
         PC No: <br>
         <select name="CompId" id="CompId">
@@ -25,33 +25,28 @@
               echo '<option value="'.$comp->CompId.'">' . $comp->CompId . "</option>";
             } ?>
           </select> <br>
-          Name:<br>
+          Name:<a style="color:red">*</a><br>
           <input type="text" name="name">
           <br>
-          NRP:<br>
+          NRP:<a style="color:red">*</a><br>
           <input type="text" name="nrp">
           <br>
-          NO. HP:<br>
+          NO. HP:<a style="color:red">*</a><br>
           <input type="text" name="no_hp">
           <br>
-          Email:<br>
+          Email:<a style="color:red">*</a><br>
           <input type="text" name="email">
           <br>
-          Comments:<br>  
+          Comments:<a style="color:red">*</a><br>  
           <textarea formid="reservation" rows="2" cols="25">
-Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> 
+Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> <br>
           <input type="submit" name="submit" value="Create reservation">
           <?php echo validation_errors();?>
         </form>
         </div>
       
-          <div class="col-md-4">
-          <br><br>
-          <textarea formid="reservation" rows="2" cols="25">
-Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> 
-          </div>
 
-        <div class="col-md-4 ">
+        <div class="col-md-5 ">
           <div class="card h-70">
             <h5 class="card-header">Specs</h5>
             <div class="card-body">

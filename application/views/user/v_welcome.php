@@ -28,7 +28,7 @@
               </ul>
             </div>
             <div class="card-footer">
-              <a href="<?php echo base_url();?>Services" class="btn btn-primary">Take me there</a>
+              <a href="<?php echo base_url();?>Services" class="btn btn-info">Take me there</a>
             </div>
           </div>
         </div>
