@@ -10,11 +10,13 @@ class ServicesModel extends CI_Model
     public function setReservation(){
         $this->load->helper('url');
         $data = array(
-            'CompId' => $this->input->post('CompId'),
-            'NAMA'=> $this->input->post('name'),
-            'EMAIL'=> $this->input->post('email'),
-            'NO_HP'=>$this->input->post('no_hp'),
-            'TIME_'=>$this->input->post('Clock')
+            'compId' => $this->input->post('CompId'),
+            'nama'=> $this->input->post('name'),
+            'nrp'=> $this->input->post('nrp'),
+            'email'=> $this->input->post('email'),
+            'noHp'=>$this->input->post('no_hp'),
+            'time'=> date('d-m-Y H:i:s'),
+            'comments'=>$this->input->post('comments')
         );
         
         return $this->db->insert('reservation', $data);

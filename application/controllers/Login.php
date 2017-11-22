@@ -8,10 +8,15 @@ class Login extends CI_Controller {
   }
 
   function index(){
-    $data['msg']=NULL;
-    $this->load->view('v_header');
-    $this->load->view('user/v_login',$data);
-    $this->load->view('v_footer'); 
+    if(isset($_SESSION['logged_in'])){
+      redirect('adminhome');
+    }
+    else{
+      $data['msg']=NULL;
+      $this->load->view('v_header');
+      $this->load->view('user/v_login',$data);
+      $this->load->view('v_footer'); 
+    }
   }
 
   function register(){

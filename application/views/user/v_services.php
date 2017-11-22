@@ -38,11 +38,13 @@
           <input type="text" name="email">
           <br>
           Comments:<a style="color:red">*</a><br>  
-          <textarea formid="reservation" rows="2" cols="25">
+          <textarea formid="reservation" name="comments" rows="2" cols="25">
 Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> <br>
           <input type="submit" name="submit" value="Create reservation">
           <?php echo validation_errors();?>
-        </form>
+        </form>    
+        <?php echo $msg;?>
+          <?php echo $this->session->flashdata('success'); ?>
         </div>
       
 
@@ -53,14 +55,15 @@ Keperluan penggunaan dan aplikasi yang dibutuhkan</textarea> <br>
               <div class="card-text" id="specsParagraph">
                
               </div>
+          
             </div>
           </div>
-          </div>
+          </div>        
+          
         </div>        
         
-        <?php echo $msg;?>
-        <?php echo $this->session->flashdata('success'); ?>
 
+        
         <script type="text/javascript">
           $(document).ready(function(){
             $('#CompId').on('change', function(){
