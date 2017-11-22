@@ -12,10 +12,8 @@
 
 <div class="container">
 <?php
-echo "hello $username ";
+echo "hello $username, ";
 echo "login success" . " ";
-
-echo '<a href="adminhome/logout">logout</a>';   
 ?>   
 <br>
         <h1 class="my-4">Reservation Queue</h1>    

@@ -10,7 +10,7 @@ class AdminHome extends CI_Controller {
   		if(isset($_SESSION['logged_in'])){
      		$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
-			$this->load->view('v_header');
+			$this->load->view('admin/v_header');
 			$this->load->view('admin/v_adminhome', $data);
 			$this->load->view('v_footer');
 			
