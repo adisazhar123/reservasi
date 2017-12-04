@@ -2,7 +2,8 @@
       <br>
       <footer class="py-5">
       <div class="container">
-        <p class="m-0 text-center text-black">Copyright &copy; RPL PC Reservation 2017</p>
+        <p class="m-0 text-center text-black">Made with <i class="fa fa-heart" aria-hidden="true"> by CaMin SE</i></p>
+        <i class="icon-heart"></i>
       </div>
       <!-- /.container -->
     </footer>

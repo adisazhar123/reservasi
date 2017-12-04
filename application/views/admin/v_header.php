@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <script src="<?php echo base_url();?>js/jquery.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url();?>css/style_login.css">
+
     
   </head>
 
@@ -26,14 +27,20 @@ RPL Reservation</a>
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url();?>Services">Services</a>
-              </li>
+            <ul class="navbar-nav ml-auto">               
+             <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>adminhome" style="color:white">View Reservation Queue</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>adminhome/computers" style="color:white">View Computer List</a>
+                </li>
               <li class="nav-item">
                   <a class="nav-link" href="<?php echo base_url();?>adminhome/logout" style="color:brown">Logout</a>
                 </li>
+
             </ul>
+            
           </div>
         </div>
     </nav>
+

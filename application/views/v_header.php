@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <script src="<?php echo base_url();?>js/jquery.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url();?>css/style_login.css">
-    
+    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+
   </head>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">

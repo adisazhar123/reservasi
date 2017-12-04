@@ -7,18 +7,16 @@
     <title>login success bro</title>
 </head>
 <body>
-
-
-
+<br>
 <div class="container">
 <?php
-echo "hello $username, ";
+
+echo "Hello $username, ";
 echo "login success" . " ";
 ?>   
 <br>
         <h1 class="my-4">Reservation Queue</h1>    
         <div class="row" style="">
-        <button id="btnAdd" class="btn btn-info btn-sm">Add New</button>
         <table width="90%" class="table table-bordered table-responsive" style="margin-top: 10px;">
             <thead>
                 <tr>
@@ -84,7 +82,27 @@ echo "login success" . " ";
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="btnAccept2" class="btn btn-success">Accept</button>
+        <button type="button" id="btnAccept2" class="btn btn-success">Yes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div id="declineModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title">Confirm Decline</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body">
+        	Do you want to Decline this record?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="btnDecline2" class="btn btn-success">Yes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -122,7 +140,7 @@ echo "login success" . " ";
                             '<td>'+data[i].status+'</td>' +
                             '<td>' +
                                 '<a href="javascript:;" id="btnAccept" class="btn btn-success item-accept" data="'+data[i].reservationId+'" data2="'+data[i].compId+'" style="margin-bottom: 5px";>Accept</a>'+
-                                '<a href="javascript:;" id="btnDecline" class="btn btn-danger">Decline</a>' +
+                                '<a href="javascript:;" id="btnDecline" class="btn btn-danger item-decline" data="'+data[i].reservationId+'">Decline</a>' +
                             '</td>' +                        
                         '</tr>'
                     }        
@@ -133,6 +151,34 @@ echo "login success" . " ";
                 }
             });
         }
+
+        $('#showData').on('click', '.item-decline', function(){
+            var reservationId = $(this).attr('data');
+            $('#declineModal').modal('show');
+            $('#btnDecline2').unbind().click(function(){
+                $.ajax({
+                    type: 'ajax',
+                    method: 'get',
+                    url: '<?php echo base_url() ?>AdminHome/declineReservation',
+                    data: {reservationId: reservationId},
+                    async: true,
+                    dataType: 'json',
+                    success: function(response){
+                        if(response.success){
+                            $('#declineModal').modal('hide');
+                            showAllReservation();
+                        } 
+                        else{
+                            alert('Error, already confirmed.');
+                        }
+                    
+                    },
+                    error: function(){
+                        alert('Error Declining');
+                    }
+                });     
+            })
+        });
 
         $('#showData').on('click', '.item-accept', function(){
             
@@ -150,10 +196,11 @@ echo "login success" . " ";
                     dataType: 'json',
                     success: function(response){
                         if(response.success){
+                            $('#acceptModal').modal('hide');
                             showAllReservation();
                         } 
                         else{
-                            alert('Error');
+                            alert('Error, already confirmed.');
                         }
                     
                     },
@@ -163,60 +210,6 @@ echo "login success" . " ";
                 });
             });
         });
-
-
-
-
-
-     /*   $('#showData').on('click', '.item-accept', function(){
-            var id = $(this).attr('data');
-            $.ajax({
-                type: 'ajax',
-                method: 'get',
-                url: '<?php echo base_url() ?>AdminHome/acceptReservation',
-                data: {reservationId: reservationId},
-                async: true,
-                dataType: 'json',
-                success: function(response){
-                    if(response.success){
-                        showAllReservation();
-                    } 
-                    else function(){
-                        alert('Error');
-                    }
-                
-                },
-                error: function(){
-                    alert('Error accepting');
-                }
-            });
-        });
-
-        	$('#showdata').on('click', '.item-accept', function(){
-			var reservationId = $(this).attr('data');
-				$.ajax({
-					type: 'ajax',
-					method: 'get',
-					async: false,
-					url: '<?php echo base_url() ?>AdminHome/acceptReservation',
-					data:{reservationId:reservationId},
-					dataType: 'json',
-					success: function(response){
-						if(response.success){
-							showAllReservation();
-						}else{
-							alert('Error');
-						}
-					},
-					error: function(){
-						alert('Error accepting');
-					}
-				});
-			});
-		
-                */
-
-
     });
 </script>
 
